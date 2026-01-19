@@ -69,7 +69,7 @@ export const Transactions = ({ onNavigate }) => {
   };
 
   const exportToCSV = () => {
-    const headers = ['Date', 'Merchant', 'Category', 'Amount', 'Card', 'Points Earned'];
+    const headers = ['Date', 'Merchant', 'Category', 'Amount (₹)', 'Card', 'Points Earned'];
     const csvData = filteredTransactions.map(t => {
       const card = cards.find(c => c.id === t.card_id);
       return [
