@@ -45,11 +45,11 @@ async def get_redemption_suggestions(current_user: dict = Depends(get_current_us
             
             options = []
             if points >= 5000:
-                options.append({"type": "statement_credit", "value": round(value, 2), "description": f"${round(value, 2)} statement credit"})
+                options.append({"type": "statement_credit", "value": round(value, 2), "description": f"₹{round(value, 2)} statement credit"})
             if points >= 10000:
-                options.append({"type": "travel", "value": round(value * 1.25, 2), "description": f"${round(value * 1.25, 2)} travel booking"})
+                options.append({"type": "travel", "value": round(value * 1.25, 2), "description": f"₹{round(value * 1.25, 2)} travel booking"})
             if points >= 2500:
-                options.append({"type": "gift_card", "value": round(value, 2), "description": f"${round(value, 2)} gift card"})
+                options.append({"type": "gift_card", "value": round(value, 2), "description": f"₹{round(value, 2)} gift card"})
             
             if options:
                 suggestions.append({
