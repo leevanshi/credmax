@@ -92,7 +92,7 @@ export const Landing = ({ onGetStarted }) => {
           className="text-center mb-16"
         >
           <h2 className="font-outfit font-bold text-4xl lg:text-5xl mb-4">Why CredMax?</h2>
-          <p className="font-dmsans text-gray-400 text-lg">Smart features to maximize your credit card rewards</p>
+          <p className="font-dmsans text-gray-400 text-lg">Smart features to maximize your credit card rewards in India</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
