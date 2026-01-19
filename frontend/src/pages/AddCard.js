@@ -94,7 +94,7 @@ export const AddCard = ({ onNavigate }) => {
                   data-testid="card-name-input"
                   value={formData.card_name}
                   onChange={(e) => setFormData({ ...formData, card_name: e.target.value })}
-                  placeholder="e.g., Sapphire Reserve, Millennia"
+                  placeholder="e.g., Regalia, SimplySAVE, Amazon Pay"
                   required
                   className="bg-white/5 border-white/10 focus:border-[#6366f1]/50 text-white placeholder:text-gray-500 rounded-xl h-12"
                 />
