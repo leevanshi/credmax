@@ -34,7 +34,7 @@ class CreditCard(BaseModel):
     user_id: str
     bank_name: str
     card_name: str
-    last_four: str
+    last_four: Optional[str] = None
     reward_type: str
     reward_rate: float
     points_balance: int = 0
@@ -45,7 +45,7 @@ class CreditCard(BaseModel):
 class CreditCardCreate(BaseModel):
     bank_name: str
     card_name: str
-    last_four: str
+    last_four: Optional[str] = None
     reward_type: str
     reward_rate: float
     expiry_date: Optional[str] = None
@@ -56,7 +56,7 @@ class CreditCardResponse(BaseModel):
     user_id: str
     bank_name: str
     card_name: str
-    last_four: str
+    last_four: Optional[str] = None
     reward_type: str
     reward_rate: float
     points_balance: int
