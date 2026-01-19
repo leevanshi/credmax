@@ -145,6 +145,37 @@ export const Dashboard = ({ onNavigate }) => {
                 <span className="font-dmsans text-sm">Rewards</span>
               </Button>
             </div>
+            
+            <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <Button
+                data-testid="nav-transactions-btn"
+                onClick={() => onNavigate('transactions')}
+                className="bg-white/5 hover:bg-white/10 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-white/10 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm">Transactions</span>
+              </Button>
+              <Button
+                data-testid="nav-comparison-btn"
+                onClick={() => onNavigate('comparison')}
+                className="bg-white/5 hover:bg-white/10 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-white/10 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm">Compare Cards</span>
+              </Button>
+              <Button
+                data-testid="nav-trends-btn"
+                onClick={() => onNavigate('trends')}
+                className="bg-white/5 hover:bg-white/10 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-white/10 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm">Trends</span>
+              </Button>
+              <Button
+                data-testid="nav-optimizer-btn"
+                onClick={() => onNavigate('optimizer')}
+                className="bg-gradient-to-r from-[#f59e0b]/20 to-[#ef4444]/20 hover:from-[#f59e0b]/30 hover:to-[#ef4444]/30 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-[#f59e0b]/30 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm font-semibold">🔥 Optimizer</span>
+              </Button>
+            </div>
           </motion.div>
         </div>
 
