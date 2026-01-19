@@ -311,6 +311,11 @@ class CredMaxAPITester:
         self.test_expiry_alerts()
         self.test_redemption_suggestions()
 
+        # Optimizer Tests
+        print("\n🔥 OPTIMIZER TESTS")
+        self.test_recurring_bills()
+        self.test_optimizer_optimize()
+
         # Print Summary
         print("\n" + "=" * 60)
         print(f"📊 TEST SUMMARY")
