@@ -22,14 +22,14 @@ class LLMService:
             for card in cards
         ])
         
-        prompt = f"""As a credit card rewards expert, recommend the best card for this transaction:
+        prompt = f"""As a credit card rewards expert in India, recommend the best card for this transaction:
 
-Transaction: ${amount:.2f} spent on {category}
+Transaction: ₹{amount:.2f} spent on {category}
 
 Available Cards:
 {cards_info}
 
-Provide a brief recommendation (2-3 sentences) explaining which card to use and why. Format: "Use the [Bank] [Card Name] because [reason]."""
+Provide a brief recommendation (2-3 sentences) explaining which card to use and why. Consider Indian spending patterns. Format: "Use the [Bank] [Card Name] because [reason]."""
         
         try:
             chat = LlmChat(
