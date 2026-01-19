@@ -270,7 +270,7 @@ export const Transactions = ({ onNavigate }) => {
                     return (
                       <tr
                         key={transaction.id}
-                        data-testid={`transaction-row-₹{idx}`}
+                        data-testid={`transaction-row-${idx}`}
                         className="border-b border-white/5 hover:bg-white/5 transition-colors"
                       >
                         <td className="px-6 py-4 font-dmsans text-sm text-gray-400">
