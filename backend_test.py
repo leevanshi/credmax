@@ -114,15 +114,15 @@ class CredMaxAPITester:
         return bool(response)
 
     def test_create_card(self):
-        """Test creating a credit card"""
+        """Test creating a credit card with Indian bank"""
         card_data = {
-            "bank_name": "Chase",
-            "card_name": "Sapphire Reserve",
+            "bank_name": "HDFC",
+            "card_name": "Regalia",
             "last_four": "1234",
             "reward_type": "points",
             "reward_rate": 2.0,
             "expiry_date": "2025-12-31",
-            "categories": ["Travel", "Food"]
+            "categories": ["Food & Dining", "Fuel"]
         }
         
         response = self.run_test(
