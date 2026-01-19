@@ -81,7 +81,7 @@ export const AddCard = ({ onNavigate }) => {
                   data-testid="bank-name-input"
                   value={formData.bank_name}
                   onChange={(e) => setFormData({ ...formData, bank_name: e.target.value })}
-                  placeholder="e.g., Chase, HDFC"
+                  placeholder="e.g., HDFC, SBI, ICICI"
                   required
                   className="bg-white/5 border-white/10 focus:border-[#6366f1]/50 text-white placeholder:text-gray-500 rounded-xl h-12"
                 />
