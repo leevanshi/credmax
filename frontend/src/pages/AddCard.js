@@ -103,15 +103,14 @@ export const AddCard = ({ onNavigate }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="last_four" className="text-gray-300 font-dmsans mb-2 block">Last 4 Digits</Label>
+                <Label htmlFor="last_four" className="text-gray-300 font-dmsans mb-2 block">Last 4 Digits (Optional)</Label>
                 <Input
                   id="last_four"
                   data-testid="last-four-input"
                   value={formData.last_four}
                   onChange={(e) => setFormData({ ...formData, last_four: e.target.value.slice(0, 4) })}
-                  placeholder="1234"
+                  placeholder="1234 (optional for privacy)"
                   maxLength={4}
-                  required
                   className="bg-white/5 border-white/10 focus:border-[#6366f1]/50 text-white placeholder:text-gray-500 rounded-xl h-12 font-jetbrains"
                 />
               </div>
