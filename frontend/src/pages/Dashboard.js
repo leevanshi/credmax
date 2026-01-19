@@ -263,7 +263,7 @@ export const Dashboard = ({ onNavigate }) => {
                     <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-[#6366f1]/20 transition-colors">
                       <CreditCard className="w-6 h-6 text-[#6366f1]" />
                     </div>
-                    <span className="font-jetbrains text-sm text-gray-400">****{card.last_four}</span>
+                    {card.last_four && <span className="font-jetbrains text-sm text-gray-400">****{card.last_four}</span>}
                   </div>
                   <h3 className="font-outfit font-bold text-lg mb-1">{card.card_name}</h3>
                   <p className="font-dmsans text-sm text-gray-400 mb-4">{card.bank_name}</p>
