@@ -158,7 +158,7 @@ export const AddCard = ({ onNavigate }) => {
                         : [...formData.categories, category];
                       setFormData({ ...formData, categories: newCategories });
                     }}
-                    className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ₹{
+                    className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ${
                       formData.categories.includes(category)
                         ? 'bg-[#6366f1] text-white border-[#6366f1]'
                         : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10'
