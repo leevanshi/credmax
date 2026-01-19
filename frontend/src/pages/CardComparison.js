@@ -125,7 +125,7 @@ export const CardComparison = ({ onNavigate }) => {
                       )}
                     </div>
                     <p className="font-dmsans text-sm text-gray-400">{card.bank_name}</p>
-                    <p className="font-jetbrains text-xs text-gray-500 mt-1">****{card.last_four}</p>
+                    {card.last_four && <p className="font-jetbrains text-xs text-gray-500 mt-1">****{card.last_four}</p>}
                   </button>
                 ))}
               </div>
