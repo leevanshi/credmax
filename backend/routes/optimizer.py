@@ -100,7 +100,7 @@ async def optimize_cards(current_user: dict = Depends(get_current_user)):
     if recurring:
         try:
             top_merchants = [opt['merchant'] for opt in recurring[:3]]
-            prompt = f"""As a credit card rewards expert, provide 2-3 brief tips for maximizing rewards on these recurring bills: {', '.join(top_merchants)}. The user could gain {total_annual_gain} points annually by optimizing. Keep it actionable and concise."""
+            prompt = f"""As a credit card rewards expert in India, provide 2-3 brief tips for maximizing rewards on these recurring bills: {', '.join(top_merchants)}. The user could gain {total_annual_gain} points annually by optimizing. Consider Indian credit card market. Keep it actionable and concise."""
             
             chat = llm_service.get_chat_instance("optimizer-insights")
             from emergentintegrations.llm.chat import UserMessage
