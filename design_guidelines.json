@@ -1,0 +1,171 @@
+{
+  "typography": {
+    "headings": {
+      "font_family": "Outfit, sans-serif",
+      "weights": ["500", "700"],
+      "tracking": "tracking-tight",
+      "usage": "Use for all section headers, hero titles, and card titles. Avoid Inter for headings."
+    },
+    "body": {
+      "font_family": "DM Sans, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Use for all paragraph text, labels, and data entries."
+    },
+    "mono": {
+      "font_family": "JetBrains Mono, monospace",
+      "usage": "Use for credit card numbers, transaction IDs, and code snippets."
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": {
+        "default": "#050505",
+        "paper": "#0A0A0A",
+        "subtle": "#121212"
+      },
+      "primary": {
+        "main": "#6366f1",
+        "light": "#818cf8",
+        "dark": "#4f46e5",
+        "contrast": "#ffffff"
+      },
+      "secondary": {
+        "main": "#a855f7",
+        "light": "#c084fc",
+        "dark": "#9333ea"
+      },
+      "accent": {
+        "success": "#10b981",
+        "warning": "#f59e0b",
+        "error": "#ef4444",
+        "info": "#3b82f6"
+      },
+      "neutral": {
+        "50": "#fafafa",
+        "100": "#f4f4f5",
+        "200": "#e4e4e7",
+        "300": "#d4d4d8",
+        "400": "#a1a1aa",
+        "500": "#71717a",
+        "600": "#52525b",
+        "700": "#3f3f46",
+        "800": "#27272a",
+        "900": "#18181b"
+      }
+    },
+    "gradients": {
+      "hero": "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)",
+      "card_glow": "radial-gradient(circle at top left, rgba(99, 102, 241, 0.15), transparent 70%)",
+      "glass": "linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)"
+    },
+    "forbidden": {
+      "ai_page": ["#7351B7"],
+      "dashboard": ["#1B93A4"]
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "default": "backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl",
+      "heavy": "backdrop-blur-2xl bg-black/40 border border-white/5"
+    },
+    "borders": {
+      "subtle": "border border-white/10",
+      "highlight": "border border-primary/50"
+    },
+    "shadows": {
+      "glow": "0 0 20px -5px rgba(99, 102, 241, 0.3)",
+      "card": "0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3)"
+    },
+    "radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-full",
+      "input": "rounded-xl"
+    }
+  },
+  "layout": {
+    "container": {
+      "max_width": "max-w-7xl",
+      "padding": "px-4 sm:px-6 lg:px-8"
+    },
+    "grid": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-6",
+      "cards": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    },
+    "spacing": {
+      "section": "py-16 lg:py-24",
+      "element": "space-y-6"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]",
+      "secondary": "bg-white/10 hover:bg-white/20 text-white border border-white/10 backdrop-blur-sm transition-all duration-300",
+      "ghost": "hover:bg-white/5 text-gray-300 hover:text-white transition-colors"
+    },
+    "cards": {
+      "base": "bg-card text-card-foreground rounded-2xl border border-border/50 shadow-sm overflow-hidden relative group",
+      "interactive": "hover:border-primary/50 transition-colors duration-300 cursor-pointer"
+    },
+    "inputs": {
+      "base": "bg-white/5 border-white/10 focus:border-primary/50 focus:ring-primary/20 text-white placeholder:text-gray-500 rounded-xl h-12"
+    }
+  },
+  "motion": {
+    "transitions": {
+      "default": "transition-all duration-300 ease-out",
+      "slow": "transition-all duration-500 ease-in-out"
+    },
+    "animations": {
+      "fade_in": "animate-in fade-in duration-500",
+      "slide_up": "animate-in slide-in-from-bottom-4 duration-500",
+      "pulse_slow": "animate-pulse duration-[3000ms]"
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure text has at least 4.5:1 contrast ratio against background.",
+    "focus": "Visible focus rings on all interactive elements (ring-2 ring-primary/50).",
+    "aria": "Use aria-labels for icon-only buttons and decorative images."
+  },
+  "media": {
+    "image_urls": {
+      "hero_background": "https://images.unsplash.com/photo-1649945918476-64fb7df0ea84?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "credit_card_visa": "https://images.unsplash.com/photo-1648161235886-32b6764917e6?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "happy_user": "https://images.unsplash.com/photo-1758525588839-97e6313401e7?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "abstract_texture": "https://images.unsplash.com/photo-1764263996452-d8498c9b0ce8?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": "Use Lucide React icons (default) or Phosphor Icons for a more premium feel."
+  },
+  "3d_libraries": {
+    "recommended": ["framer-motion", "recharts"],
+    "usage": "Use Framer Motion for layout transitions and Recharts for data visualization. Avoid heavy 3D libraries unless necessary for the hero section."
+  },
+  "instructions_to_main_agent": [
+    "Implement a 'Dark Mode First' approach. The default theme is dark.",
+    "Use the 'Outfit' font for headings to give a modern, tech-forward feel.",
+    "Apply glassmorphism effects to dashboard cards to create depth.",
+    "Use the provided image URLs for the hero section and credit card visuals.",
+    "Ensure all interactive elements have hover and active states.",
+    "Use 'sonner' for toast notifications.",
+    "Follow the 'Bento' grid layout for the dashboard overview.",
+    "Do not use the forbidden colors (#7351B7 for AI page, #1B93A4 for Dashboard).",
+    "Add 'data-testid' to all interactive elements."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations.",
+    "NEVER use AI assistant Emoji characters for icons.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Components MUST use named exports.",
+    "Pages MUST use default exports.",
+    "Use sonner for toasts."
+  ]
+}
