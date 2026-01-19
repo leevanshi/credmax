@@ -325,6 +325,9 @@ class CredMaxAPITester:
         # AI & ML Tests
         print("\n🤖 AI & RECOMMENDATION TESTS")
         self.test_card_recommendation()
+        
+        # India Localization Tests
+        self.test_india_localization_features()
 
         # Transaction Tests
         print("\n💰 TRANSACTION TESTS")
