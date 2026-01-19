@@ -77,7 +77,7 @@ export const Transactions = ({ onNavigate }) => {
         t.merchant,
         t.category,
         `$${t.amount.toFixed(2)}`,
-        card ? `₹{card.bank_name} ₹{card.card_name}` : 'Unknown',
+        card ? `${card.bank_name} ${card.card_name}` : 'Unknown',
         t.points_earned
       ];
     });
