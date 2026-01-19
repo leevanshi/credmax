@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-01-19T15:07:13.461023",
-  "total_tests": 14,
-  "passed_tests": 14,
+  "timestamp": "2026-01-19T15:47:38.916655",
+  "total_tests": 18,
+  "passed_tests": 18,
   "success_rate": 100.0,
   "test_details": [
     {
@@ -31,6 +31,26 @@
     },
     {
       "test": "Get Card Recommendation",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Recommendation for Food & Dining",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Recommendation for Fuel",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Recommendation for Bills & Utilities",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Recommendation for Online Shopping",
       "success": true,
       "details": ""
     },
