@@ -151,7 +151,7 @@ export const AddCard = ({ onNavigate }) => {
                   <button
                     key={category}
                     type="button"
-                    data-testid={`category-₹{category.toLowerCase()}-btn`}
+                    data-testid={`category-${category.toLowerCase()}-btn`}
                     onClick={() => {
                       const newCategories = formData.categories.includes(category)
                         ? formData.categories.filter(c => c !== category)
