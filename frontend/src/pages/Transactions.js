@@ -76,7 +76,7 @@ export const Transactions = ({ onNavigate }) => {
         format(new Date(t.date), 'yyyy-MM-dd'),
         t.merchant,
         t.category,
-        `$₹{t.amount.toFixed(2)}`,
+        `$${t.amount.toFixed(2)}`,
         card ? `₹{card.bank_name} ₹{card.card_name}` : 'Unknown',
         t.points_earned
       ];
