@@ -15,7 +15,7 @@ db = client[os.environ['DB_NAME']]
 
 app = FastAPI()
 
-from routes import auth, cards, recommendations, transactions, analytics, rewards
+from routes import auth, cards, recommendations, transactions, analytics, rewards, optimizer
 
 app.include_router(auth.router, prefix="/api")
 app.include_router(cards.router, prefix="/api")
@@ -23,6 +23,7 @@ app.include_router(recommendations.router, prefix="/api")
 app.include_router(transactions.router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
 app.include_router(rewards.router, prefix="/api")
+app.include_router(optimizer.router, prefix="/api")
 
 app.add_middleware(
     CORSMiddleware,
