@@ -85,7 +85,7 @@ export const Rewards = ({ onNavigate }) => {
               {alerts.map((alert, idx) => (
                 <div
                   key={idx}
-                  data-testid={`alert-${idx}`}
+                  data-testid={`alert-₹{idx}`}
                   className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-6"
                 >
                   <div className="flex items-start justify-between mb-3">
@@ -94,7 +94,7 @@ export const Rewards = ({ onNavigate }) => {
                       <p className="font-dmsans text-sm text-gray-400">{alert.message}</p>
                     </div>
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      className={`px-3 py-1 rounded-full text-xs font-medium ₹{
                         alert.risk_level === 'high'
                           ? 'bg-[#ef4444] text-white'
                           : 'bg-[#f59e0b] text-white'
@@ -109,7 +109,7 @@ export const Rewards = ({ onNavigate }) => {
                       <p className="font-outfit font-bold text-2xl">{alert.points_balance.toLocaleString()}</p>
                     </div>
                     <Button
-                      data-testid={`redeem-alert-${idx}-btn`}
+                      data-testid={`redeem-alert-₹{idx}-btn`}
                       className="bg-[#ef4444] hover:bg-[#dc2626] text-white rounded-full px-6"
                     >
                       Redeem Now
@@ -132,7 +132,7 @@ export const Rewards = ({ onNavigate }) => {
               {suggestions.map((suggestion, idx) => (
                 <div
                   key={idx}
-                  data-testid={`suggestion-${idx}`}
+                  data-testid={`suggestion-₹{idx}`}
                   className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
                 >
                   <div className="flex items-center gap-3 mb-4">
@@ -160,7 +160,7 @@ export const Rewards = ({ onNavigate }) => {
                             </p>
                             <p className="font-dmsans text-sm">{option.description}</p>
                           </div>
-                          <p className="font-outfit font-bold text-xl text-[#10b981]">${option.value}</p>
+                          <p className="font-outfit font-bold text-xl text-[#10b981]">₹{option.value}</p>
                         </div>
                       </div>
                     ))}

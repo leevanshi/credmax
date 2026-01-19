@@ -145,7 +145,7 @@ export const Trends = ({ onNavigate }) => {
             className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
           >
             <p className="font-dmsans text-sm text-gray-400 mb-2">Total Spending</p>
-            <p className="font-outfit font-bold text-3xl mb-1">${totalSpending.toFixed(2)}</p>
+            <p className="font-outfit font-bold text-3xl mb-1">₹{totalSpending.toFixed(2)}</p>
             <p className="font-dmsans text-xs text-gray-400">Last {timeRange} months</p>
           </motion.div>
           <motion.div
@@ -156,7 +156,7 @@ export const Trends = ({ onNavigate }) => {
             className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
           >
             <p className="font-dmsans text-sm text-gray-400 mb-2">Avg Monthly</p>
-            <p className="font-outfit font-bold text-3xl mb-1">${avgMonthly.toFixed(2)}</p>
+            <p className="font-outfit font-bold text-3xl mb-1">₹{avgMonthly.toFixed(2)}</p>
             <p className="font-dmsans text-xs text-gray-400">Per month</p>
           </motion.div>
           <motion.div
@@ -167,7 +167,7 @@ export const Trends = ({ onNavigate }) => {
             className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
           >
             <p className="font-dmsans text-sm text-gray-400 mb-2">Trend</p>
-            <p className={`font-outfit font-bold text-3xl mb-1 ${trend >= 0 ? 'text-[#ef4444]' : 'text-[#10b981]'}`}>
+            <p className={`font-outfit font-bold text-3xl mb-1 ₹{trend >= 0 ? 'text-[#ef4444]' : 'text-[#10b981]'}`}>
               {trend >= 0 ? '+' : ''}{trend.toFixed(1)}%
             </p>
             <p className="font-dmsans text-xs text-gray-400">{trend >= 0 ? 'Increase' : 'Decrease'}</p>

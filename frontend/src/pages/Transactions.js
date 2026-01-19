@@ -76,8 +76,8 @@ export const Transactions = ({ onNavigate }) => {
         format(new Date(t.date), 'yyyy-MM-dd'),
         t.merchant,
         t.category,
-        `$${t.amount.toFixed(2)}`,
-        card ? `${card.bank_name} ${card.card_name}` : 'Unknown',
+        `$₹{t.amount.toFixed(2)}`,
+        card ? `₹{card.bank_name} ₹{card.card_name}` : 'Unknown',
         t.points_earned
       ];
     });
@@ -87,7 +87,7 @@ export const Transactions = ({ onNavigate }) => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `credmax-transactions-${format(new Date(), 'yyyy-MM-dd')}.csv`;
+    a.download = `credmax-transactions-₹{format(new Date(), 'yyyy-MM-dd')}.csv`;
     a.click();
     toast.success('Transactions exported!');
   };
@@ -154,7 +154,7 @@ export const Transactions = ({ onNavigate }) => {
             className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
           >
             <p className="font-dmsans text-sm text-gray-400 mb-2">Total Spent</p>
-            <p className="font-outfit font-bold text-3xl">${totalSpent.toFixed(2)}</p>
+            <p className="font-outfit font-bold text-3xl">₹{totalSpent.toFixed(2)}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -270,7 +270,7 @@ export const Transactions = ({ onNavigate }) => {
                     return (
                       <tr
                         key={transaction.id}
-                        data-testid={`transaction-row-${idx}`}
+                        data-testid={`transaction-row-₹{idx}`}
                         className="border-b border-white/5 hover:bg-white/5 transition-colors"
                       >
                         <td className="px-6 py-4 font-dmsans text-sm text-gray-400">
@@ -283,10 +283,10 @@ export const Transactions = ({ onNavigate }) => {
                           </span>
                         </td>
                         <td className="px-6 py-4 font-dmsans text-sm text-gray-400">
-                          {card ? `${card.bank_name} ****${card.last_four}` : 'Unknown'}
+                          {card ? `₹{card.bank_name} ****₹{card.last_four}` : 'Unknown'}
                         </td>
                         <td className="px-6 py-4 text-right font-outfit font-semibold">
-                          ${transaction.amount.toFixed(2)}
+                          ₹{transaction.amount.toFixed(2)}
                         </td>
                         <td className="px-6 py-4 text-right font-outfit font-semibold text-[#10b981]">
                           +{transaction.points_earned}

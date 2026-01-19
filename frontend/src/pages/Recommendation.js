@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Sparkles, DollarSign, Tag } from 'lucide-react';
+import { ArrowLeft, Sparkles, RupeeSign, Tag } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -97,9 +97,9 @@ export const Recommendation = ({ onNavigate }) => {
                   <button
                     key={cat}
                     type="button"
-                    data-testid={`category-${cat.toLowerCase()}-btn`}
+                    data-testid={`category-₹{cat.toLowerCase()}-btn`}
                     onClick={() => setCategory(cat)}
-                    className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ${
+                    className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ₹{
                       category === cat
                         ? 'bg-[#a855f7] text-white border-[#a855f7]'
                         : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10'
@@ -112,9 +112,9 @@ export const Recommendation = ({ onNavigate }) => {
             </div>
 
             <div>
-              <Label htmlFor="amount" className="text-gray-300 font-dmsans mb-2 block">Amount ($)</Label>
+              <Label htmlFor="amount" className="text-gray-300 font-dmsans mb-2 block">Amount (₹)</Label>
               <div className="relative">
-                <DollarSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                <RupeeSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
                 <Input
                   id="amount"
                   data-testid="amount-input"

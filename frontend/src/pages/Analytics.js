@@ -113,7 +113,7 @@ export const Analytics = ({ onNavigate }) => {
                     dataKey="value"
                   >
                     {chartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      <Cell key={`cell-₹{index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
                   <Tooltip
@@ -151,7 +151,7 @@ export const Analytics = ({ onNavigate }) => {
                         ></div>
                         <span className="font-dmsans font-medium">{category}</span>
                       </div>
-                      <span className="font-outfit font-bold text-lg">${amount.toFixed(2)}</span>
+                      <span className="font-outfit font-bold text-lg">₹{amount.toFixed(2)}</span>
                     </div>
                   ))}
               </div>
@@ -192,7 +192,7 @@ export const Analytics = ({ onNavigate }) => {
                   <p className="font-dmsans text-sm text-gray-400 mb-3">
                     {cluster.categories.join(', ')}
                   </p>
-                  <p className="font-outfit font-bold text-2xl">${cluster.total_spending.toFixed(2)}</p>
+                  <p className="font-outfit font-bold text-2xl">₹{cluster.total_spending.toFixed(2)}</p>
                 </div>
               ))}
             </div>

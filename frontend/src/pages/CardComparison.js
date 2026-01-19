@@ -110,9 +110,9 @@ export const CardComparison = ({ onNavigate }) => {
                 {cards.map((card, idx) => (
                   <button
                     key={card.id}
-                    data-testid={`select-card-${idx}`}
+                    data-testid={`select-card-₹{idx}`}
                     onClick={() => toggleCard(card.id)}
-                    className={`p-4 rounded-xl border transition-all duration-300 text-left ${
+                    className={`p-4 rounded-xl border transition-all duration-300 text-left ₹{
                       selectedCards.includes(card.id)
                         ? 'bg-[#a855f7]/20 border-[#a855f7]'
                         : 'bg-white/5 border-white/10 hover:bg-white/10'
@@ -172,7 +172,7 @@ export const CardComparison = ({ onNavigate }) => {
                         <td className="px-6 py-4 font-dmsans font-semibold">Points Value</td>
                         {comparedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4 text-center font-outfit text-lg">
-                            ${(card.points_balance * 0.01).toFixed(2)}
+                            ₹{(card.points_balance * 0.01).toFixed(2)}
                           </td>
                         ))}
                       </tr>
@@ -235,15 +235,15 @@ export const CardComparison = ({ onNavigate }) => {
                           <h4 className="font-outfit font-bold text-sm mb-3">{card.card_name}</h4>
                           <div className="space-y-2 text-sm">
                             <div className="flex justify-between">
-                              <span className="text-gray-400">$100 on Food:</span>
+                              <span className="text-gray-400">₹100 on Food:</span>
                               <span className="font-semibold text-[#10b981]">+{Math.round(100 * card.reward_rate * foodBonus)} pts</span>
                             </div>
                             <div className="flex justify-between">
-                              <span className="text-gray-400">$200 on Travel:</span>
+                              <span className="text-gray-400">₹200 on Travel:</span>
                               <span className="font-semibold text-[#10b981]">+{Math.round(200 * card.reward_rate * travelBonus)} pts</span>
                             </div>
                             <div className="flex justify-between">
-                              <span className="text-gray-400">$150 on Groceries:</span>
+                              <span className="text-gray-400">₹150 on Groceries:</span>
                               <span className="font-semibold text-[#10b981]">+{Math.round(150 * card.reward_rate * groceriesBonus)} pts</span>
                             </div>
                           </div>

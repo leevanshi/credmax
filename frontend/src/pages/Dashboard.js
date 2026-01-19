@@ -256,7 +256,7 @@ export const Dashboard = ({ onNavigate }) => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.1 }}
-                  data-testid={`card-item-${idx}`}
+                  data-testid={`card-item-₹{idx}`}
                   className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-6 hover:border-[#6366f1]/50 transition-all duration-300 group cursor-pointer"
                 >
                   <div className="flex items-start justify-between mb-4">

@@ -6,11 +6,11 @@ import { toast } from 'sonner';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = `₹{BACKEND_URL}/api`;
 
 const getHeaders = () => {
   const token = localStorage.getItem('credmax_token');
-  return { Authorization: `Bearer ${token}` };
+  return { Authorization: `Bearer ₹{token}` };
 };
 
 export const Optimizer = ({ onNavigate }) => {
@@ -27,7 +27,7 @@ export const Optimizer = ({ onNavigate }) => {
 
   const loadRecurringBills = async () => {
     try {
-      const response = await axios.get(`${API}/optimizer/recurring-bills`, { headers: getHeaders() });
+      const response = await axios.get(`₹{API}/optimizer/recurring-bills`, { headers: getHeaders() });
       setRecurringBills(response.data.recurring_bills);
     } catch (error) {
       toast.error('Failed to load recurring bills');
@@ -39,7 +39,7 @@ export const Optimizer = ({ onNavigate }) => {
   const runOptimization = async () => {
     setOptimizing(true);
     try {
-      const response = await axios.post(`${API}/optimizer/optimize`, {}, { headers: getHeaders() });
+      const response = await axios.post(`₹{API}/optimizer/optimize`, {}, { headers: getHeaders() });
       setOptimizations(response.data.optimizations);
       setInsights(response.data.insights);
       setTotalGain(response.data.total_annual_gain);
@@ -140,7 +140,7 @@ export const Optimizer = ({ onNavigate }) => {
                 {recurringBills.map((bill, idx) => (
                   <div
                     key={idx}
-                    data-testid={`recurring-bill-${idx}`}
+                    data-testid={`recurring-bill-₹{idx}`}
                     className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-4"
                   >
                     <div className="flex items-start justify-between mb-2">
@@ -156,11 +156,11 @@ export const Optimizer = ({ onNavigate }) => {
                       </div>
                       <div className="flex justify-between text-gray-400">
                         <span>Avg Amount:</span>
-                        <span className="font-semibold text-white">${bill.avg_amount}</span>
+                        <span className="font-semibold text-white">₹{bill.avg_amount}</span>
                       </div>
                       <div className="flex justify-between text-gray-400">
                         <span>Total Spent:</span>
-                        <span className="font-semibold text-[#f59e0b]">${bill.total_spent}</span>
+                        <span className="font-semibold text-[#f59e0b]">₹{bill.total_spent}</span>
                       </div>
                     </div>
                   </div>
@@ -215,14 +215,14 @@ export const Optimizer = ({ onNavigate }) => {
                     {optimizations.map((opt, idx) => (
                       <div
                         key={idx}
-                        data-testid={`optimization-${idx}`}
+                        data-testid={`optimization-₹{idx}`}
                         className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#10b981]/50 transition-all duration-300"
                       >
                         <div className="flex items-start justify-between mb-4">
                           <div>
                             <h3 className="font-outfit font-bold text-xl mb-1">{opt.merchant}</h3>
                             <p className="font-dmsans text-sm text-gray-400">
-                              {opt.category} • ~${opt.avg_amount} per transaction
+                              {opt.category} • ~₹{opt.avg_amount} per transaction
                             </p>
                           </div>
                           <div className="text-right">
