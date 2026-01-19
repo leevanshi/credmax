@@ -87,7 +87,7 @@ export const Transactions = ({ onNavigate }) => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `credmax-transactions-₹{format(new Date(), 'yyyy-MM-dd')}.csv`;
+    a.download = `credmax-transactions-${format(new Date(), 'yyyy-MM-dd')}.csv`;
     a.click();
     toast.success('Transactions exported!');
   };
