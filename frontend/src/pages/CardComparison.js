@@ -37,7 +37,7 @@ export const CardComparison = ({ onNavigate }) => {
 
   const comparedCards = cards.filter(card => selectedCards.includes(card.id));
 
-  const categories = ['Food', 'Travel', 'Groceries', 'Gas', 'Shopping', 'Entertainment', 'Bills', 'Other'];
+  const categories = ['Food & Dining', 'Travel', 'Groceries', 'Fuel', 'Shopping', 'Entertainment', 'Bills & Utilities', 'Online Shopping', 'Other'];
 
   if (loading) {
     return (
