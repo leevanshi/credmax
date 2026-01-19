@@ -99,7 +99,7 @@ export const Recommendation = ({ onNavigate }) => {
                     type="button"
                     data-testid={`category-${cat.toLowerCase()}-btn`}
                     onClick={() => setCategory(cat)}
-                    className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ₹{
+                    className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ${
                       category === cat
                         ? 'bg-[#a855f7] text-white border-[#a855f7]'
                         : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10'
