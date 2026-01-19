@@ -66,13 +66,13 @@ Provide a brief recommendation (2-3 sentences) explaining which card to use and 
         top_category = max(categories, key=categories.get) if categories else "general"
         total_spent = sum(t['amount'] for t in transactions)
         
-        prompt = f"""Generate 2-3 actionable insights about this spending pattern:
+        prompt = f"""Generate 2-3 actionable insights about this spending pattern in India:
 
-Total Spent: ${total_spent:.2f}
-Top Category: {top_category} (${categories.get(top_category, 0):.2f})
+Total Spent: ₹{total_spent:.2f}
+Top Category: {top_category} (₹{categories.get(top_category, 0):.2f})
 Categories: {', '.join(categories.keys())}
 
-Provide brief, actionable tips for maximizing rewards."""
+Provide brief, actionable tips for maximizing rewards in the Indian credit card market."""
         
         try:
             chat = LlmChat(
