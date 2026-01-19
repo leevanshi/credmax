@@ -38,7 +38,7 @@ export const AddCard = ({ onNavigate }) => {
     }
   };
 
-  const categoryOptions = ['Food', 'Travel', 'Groceries', 'Gas', 'Shopping', 'Entertainment', 'Bills', 'Other'];
+  const categoryOptions = ['Food & Dining', 'Travel', 'Groceries', 'Fuel', 'Shopping', 'Entertainment', 'Bills & Utilities', 'Online Shopping', 'Other'];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#050505] via-[#0A0A0A] to-[#050505] text-white">
