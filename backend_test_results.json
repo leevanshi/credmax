@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-01-19T09:04:51.378861",
+  "total_tests": 12,
+  "passed_tests": 12,
+  "success_rate": 100.0,
+  "test_details": [
+    {
+      "test": "User Signup",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get User Info",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Create Credit Card",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get All Cards",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Card by ID",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Card Recommendation",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Create Transaction",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get All Transactions",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Spending Patterns",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get AI Insights",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Expiry Alerts",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Redemption Suggestions",
+      "success": true,
+      "details": ""
+    }
+  ]
+}
