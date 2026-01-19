@@ -191,7 +191,7 @@ export const Recommendation = ({ onNavigate }) => {
                       data-testid="merchant-input"
                       value={merchant}
                       onChange={(e) => setMerchant(e.target.value)}
-                      placeholder="e.g., Starbucks, Amazon"
+                      placeholder="e.g., Swiggy, Amazon, BigBasket"
                       className="bg-white/5 border-white/10 focus:border-[#10b981]/50 text-white placeholder:text-gray-500 rounded-xl h-12 pl-12"
                     />
                   </div>
