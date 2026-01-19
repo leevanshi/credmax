@@ -57,7 +57,7 @@ export const Trends = ({ onNavigate }) => {
 
     setMonthlyData(monthlySpending);
 
-    const categories = ['Food', 'Travel', 'Groceries', 'Gas', 'Shopping', 'Entertainment', 'Bills', 'Other'];
+    const categories = ['Food & Dining', 'Travel', 'Groceries', 'Fuel', 'Shopping', 'Entertainment', 'Bills & Utilities', 'Online Shopping', 'Other'];
     const categoryData = months.map(month => {
       const monthKey = format(month, 'yyyy-MM');
       const monthTxs = txData.filter(t => {
