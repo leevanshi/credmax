@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-01-19T09:04:51.378861",
-  "total_tests": 12,
-  "passed_tests": 12,
+  "timestamp": "2026-01-19T15:07:13.461023",
+  "total_tests": 14,
+  "passed_tests": 14,
   "success_rate": 100.0,
   "test_details": [
     {
@@ -61,6 +61,16 @@
     },
     {
       "test": "Get Redemption Suggestions",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Recurring Bills",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Optimization Recommendations",
       "success": true,
       "details": ""
     }
