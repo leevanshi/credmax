@@ -7,6 +7,10 @@ import { AddCard } from './pages/AddCard';
 import { Recommendation } from './pages/Recommendation';
 import { Analytics } from './pages/Analytics';
 import { Rewards } from './pages/Rewards';
+import { Transactions } from './pages/Transactions';
+import { CardComparison } from './pages/CardComparison';
+import { Trends } from './pages/Trends';
+import { Optimizer } from './pages/Optimizer';
 import { Toaster } from './components/ui/sonner';
 import './App.css';
 
@@ -43,6 +47,14 @@ function AppContent() {
         return <Analytics onNavigate={setCurrentPage} />;
       case 'rewards':
         return <Rewards onNavigate={setCurrentPage} />;
+      case 'transactions':
+        return <Transactions onNavigate={setCurrentPage} />;
+      case 'comparison':
+        return <CardComparison onNavigate={setCurrentPage} />;
+      case 'trends':
+        return <Trends onNavigate={setCurrentPage} />;
+      case 'optimizer':
+        return <Optimizer onNavigate={setCurrentPage} />;
       default:
         return <Dashboard onNavigate={setCurrentPage} />;
     }
