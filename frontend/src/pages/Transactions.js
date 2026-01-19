@@ -283,7 +283,7 @@ export const Transactions = ({ onNavigate }) => {
                           </span>
                         </td>
                         <td className="px-6 py-4 font-dmsans text-sm text-gray-400">
-                          {card ? `₹{card.bank_name} ****₹{card.last_four}` : 'Unknown'}
+                          {card ? `${card.bank_name} ****${card.last_four}` : 'Unknown'}
                         </td>
                         <td className="px-6 py-4 text-right font-outfit font-semibold">
                           ₹{transaction.amount.toFixed(2)}
