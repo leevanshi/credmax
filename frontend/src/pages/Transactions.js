@@ -92,7 +92,7 @@ export const Transactions = ({ onNavigate }) => {
     toast.success('Transactions exported!');
   };
 
-  const categories = ['Food', 'Travel', 'Groceries', 'Gas', 'Shopping', 'Entertainment', 'Bills', 'Other'];
+  const categories = ['Food & Dining', 'Travel', 'Groceries', 'Fuel', 'Shopping', 'Entertainment', 'Bills & Utilities', 'Online Shopping', 'Other'];
   const totalSpent = filteredTransactions.reduce((sum, t) => sum + t.amount, 0);
   const totalPoints = filteredTransactions.reduce((sum, t) => sum + t.points_earned, 0);
 
