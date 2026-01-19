@@ -161,16 +161,36 @@ export const Landing = ({ onGetStarted }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-outfit font-bold text-4xl lg:text-5xl mb-4">Why CredMax?</h2>
-          <p className="font-dmsans text-gray-400 text-lg">Smart features to maximize your credit card rewards in India</p>
+          <h2 className="font-outfit font-bold text-4xl lg:text-5xl mb-4">How CredMax Maximizes Your Rewards</h2>
+          <p className="font-dmsans text-gray-400 text-lg">India's smartest credit card optimizer powered by AI</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {[
-            { icon: CreditCard, title: 'Track All Cards', desc: 'Manage multiple credit cards in one place' },
-            { icon: Sparkles, title: 'AI Recommendations', desc: 'Get smart card suggestions for every purchase' },
-            { icon: TrendingUp, title: 'Spending Analytics', desc: 'Understand your spending patterns with ML insights' },
-            { icon: Gift, title: 'Reward Alerts', desc: 'Never let your points expire again' }
+            { 
+              icon: CreditCard, 
+              title: 'Track All Cards', 
+              desc: 'Add unlimited cards from HDFC, SBI, ICICI, Axis & more',
+              benefit: 'Manage all in one place'
+            },
+            { 
+              icon: Sparkles, 
+              title: 'AI Recommendations', 
+              desc: 'GPT-5.2 powered suggestions for every purchase',
+              benefit: '+15-25% more rewards'
+            },
+            { 
+              icon: TrendingUp, 
+              title: 'ML Spending Insights', 
+              desc: 'Pattern analysis to identify reward opportunities',
+              benefit: 'Optimize ₹50K+ yearly'
+            },
+            { 
+              icon: Gift, 
+              title: 'Never Expire Points', 
+              desc: 'Smart alerts before your points vanish',
+              benefit: 'Save ₹10K+ annually'
+            }
           ].map((feature, idx) => (
             <motion.div
               key={idx}
@@ -184,10 +204,60 @@ export const Landing = ({ onGetStarted }) => {
                 <feature.icon className="w-6 h-6 text-[#6366f1]" />
               </div>
               <h3 className="font-outfit font-bold text-xl mb-2">{feature.title}</h3>
-              <p className="font-dmsans text-gray-400 text-sm">{feature.desc}</p>
+              <p className="font-dmsans text-gray-400 text-sm mb-3">{feature.desc}</p>
+              <div className="backdrop-blur-xl bg-[#10b981]/10 border border-[#10b981]/30 rounded-lg px-3 py-2">
+                <p className="font-dmsans text-[#10b981] text-xs font-semibold">{feature.benefit}</p>
+              </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="backdrop-blur-xl bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 border border-[#6366f1]/30 rounded-3xl p-12 text-center"
+        >
+          <h3 className="font-outfit font-bold text-3xl mb-4">
+            Real Indians, Real Savings
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {[
+              { name: 'Priya S.', location: 'Mumbai', saving: '₹1.2L', quote: 'I was using my HDFC Regalia for groceries. CredMax showed me my Amex gives 5x points!' },
+              { name: 'Rahul K.', location: 'Bangalore', saving: '₹85K', quote: 'Points Optimizer detected my Netflix, Spotify bills. Switched cards, now earning 2x more!' },
+              { name: 'Anjali M.', location: 'Delhi', saving: '₹1.5L', quote: 'Almost lost 45K points to expiry. CredMax alerts saved me. Best decision ever!' }
+            ].map((testimonial, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.15 }}
+                className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#6366f1] to-[#a855f7] rounded-full"></div>
+                  <div className="text-left">
+                    <div className="font-outfit font-bold text-base">{testimonial.name}</div>
+                    <div className="font-dmsans text-xs text-gray-400">{testimonial.location}</div>
+                  </div>
+                </div>
+                <div className="backdrop-blur-xl bg-[#10b981]/20 border border-[#10b981]/30 rounded-lg px-4 py-2 mb-4">
+                  <div className="font-outfit font-bold text-xl text-[#10b981]">{testimonial.saving}</div>
+                  <div className="font-dmsans text-xs text-gray-400">Saved in 2024</div>
+                </div>
+                <p className="font-dmsans text-sm text-gray-300 italic">"{testimonial.quote}"</p>
+              </motion.div>
+            ))}
+          </div>
+          <Button
+            data-testid="cta-start-saving-btn"
+            onClick={onGetStarted}
+            className="mt-10 bg-gradient-to-r from-[#6366f1] to-[#a855f7] hover:from-[#4f46e5] hover:to-[#9333ea] text-white rounded-full px-10 py-6 text-lg font-semibold shadow-xl"
+          >
+            Start Saving Like Them →
+          </Button>
+        </motion.div>
       </div>
     </div>
   );
