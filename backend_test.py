@@ -241,6 +241,36 @@ class CredMaxAPITester:
         )
         return bool(response and 'alerts' in response)
 
+    def test_india_localization_features(self):
+        """Test India-specific localization features"""
+        print("\n🇮🇳 INDIA LOCALIZATION TESTS")
+        
+        # Test Indian categories in recommendation
+        indian_categories = ["Food & Dining", "Fuel", "Bills & Utilities", "Online Shopping"]
+        for category in indian_categories:
+            recommendation_data = {
+                "category": category,
+                "amount": 1000.0
+            }
+            
+            response = self.run_test(
+                f"Recommendation for {category}",
+                "POST",
+                "recommendations",
+                200,
+                data=recommendation_data
+            )
+            
+            if response and 'reason' in response:
+                # Check if the response mentions Indian context
+                reason_text = response['reason'].lower()
+                if 'india' in reason_text or 'indian' in reason_text:
+                    print(f"   ✅ {category} recommendation includes Indian context")
+                else:
+                    print(f"   ⚠️  {category} recommendation may not include Indian context")
+        
+        return True
+
     def test_redemption_suggestions(self):
         """Test redemption suggestions"""
         response = self.run_test(
