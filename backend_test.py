@@ -179,17 +179,17 @@ class CredMaxAPITester:
         return bool(response and 'card_id' in response)
 
     def test_create_transaction(self):
-        """Test creating a transaction"""
+        """Test creating a transaction with Indian merchant"""
         if not self.card_id:
             self.log_test("Create Transaction", False, "No card ID available")
             return False
             
         transaction_data = {
             "card_id": self.card_id,
-            "amount": 25.50,
-            "category": "Food",
-            "merchant": "Starbucks",
-            "points_earned": 51
+            "amount": 250.50,
+            "category": "Food & Dining",
+            "merchant": "Swiggy",
+            "points_earned": 501
         }
         
         response = self.run_test(
