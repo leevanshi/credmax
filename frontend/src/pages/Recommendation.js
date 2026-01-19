@@ -114,7 +114,7 @@ export const Recommendation = ({ onNavigate }) => {
             <div>
               <Label htmlFor="amount" className="text-gray-300 font-dmsans mb-2 block">Amount (₹)</Label>
               <div className="relative">
-                <RupeeSign className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+                <IndianRupee className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
                 <Input
                   id="amount"
                   data-testid="amount-input"
