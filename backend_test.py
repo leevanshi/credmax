@@ -163,10 +163,10 @@ class CredMaxAPITester:
         return bool(response)
 
     def test_card_recommendation(self):
-        """Test AI card recommendation"""
+        """Test AI card recommendation with Indian category"""
         recommendation_data = {
-            "category": "Food",
-            "amount": 50.0
+            "category": "Food & Dining",
+            "amount": 500.0
         }
         
         response = self.run_test(
