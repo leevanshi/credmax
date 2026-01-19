@@ -45,7 +45,7 @@ export const Landing = ({ onGetStarted }) => {
             Maximize Every Swipe
           </h1>
           <p className="font-dmsans text-lg sm:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            AI-powered insights to help you earn maximum rewards on every credit card transaction. Never miss points again.
+            AI-powered insights to help you earn maximum rewards on every credit card transaction. Built for India, optimized for your wallet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
