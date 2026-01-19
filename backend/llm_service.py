@@ -87,3 +87,11 @@ Provide brief, actionable tips for maximizing rewards."""
         except Exception as e:
             print(f"LLM error: {e}")
             return f"You spent most on {top_category}. Consider using cards with higher rewards in this category to maximize points."
+    
+    def get_chat_instance(self, session_id: str):
+        """Get a chat instance for the optimizer"""
+        return LlmChat(
+            api_key=self.api_key,
+            session_id=session_id,
+            system_message="You are a credit card rewards optimization expert. Give concise, practical advice."
+        ).with_model("openai", "gpt-5.2")
