@@ -251,6 +251,26 @@ class CredMaxAPITester:
         )
         return bool(response and 'suggestions' in response)
 
+    def test_recurring_bills(self):
+        """Test recurring bills analysis"""
+        response = self.run_test(
+            "Get Recurring Bills",
+            "GET",
+            "optimizer/recurring-bills",
+            200
+        )
+        return bool(response and 'recurring_bills' in response)
+
+    def test_optimizer_optimize(self):
+        """Test card optimization recommendations"""
+        response = self.run_test(
+            "Get Optimization Recommendations",
+            "POST",
+            "optimizer/optimize",
+            200
+        )
+        return bool(response and 'optimizations' in response)
+
     def run_all_tests(self):
         """Run complete test suite"""
         print("🚀 Starting CredMax API Test Suite")
