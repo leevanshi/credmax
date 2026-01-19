@@ -1,53 +1,62 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from 'react';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { Landing } from './pages/Landing';
+import { Auth } from './pages/Auth';
+import { Dashboard } from './pages/Dashboard';
+import { AddCard } from './pages/AddCard';
+import { Recommendation } from './pages/Recommendation';
+import { Analytics } from './pages/Analytics';
+import { Rewards } from './pages/Rewards';
+import { Toaster } from './components/ui/sonner';
+import './App.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+function AppContent() {
+  const { user, loading } = useAuth();
+  const [showAuth, setShowAuth] = useState(false);
+  const [currentPage, setCurrentPage] = useState('dashboard');
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#050505] via-[#0A0A0A] to-[#050505] flex items-center justify-center">
+        <div className="text-white font-dmsans">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user && !showAuth) {
+    return <Landing onGetStarted={() => setShowAuth(true)} />;
+  }
+
+  if (!user && showAuth) {
+    return <Auth onClose={() => setShowAuth(false)} />;
+  }
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'dashboard':
+        return <Dashboard onNavigate={setCurrentPage} />;
+      case 'add-card':
+        return <AddCard onNavigate={setCurrentPage} />;
+      case 'recommendation':
+        return <Recommendation onNavigate={setCurrentPage} />;
+      case 'analytics':
+        return <Analytics onNavigate={setCurrentPage} />;
+      case 'rewards':
+        return <Rewards onNavigate={setCurrentPage} />;
+      default:
+        return <Dashboard onNavigate={setCurrentPage} />;
     }
   };
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+  return renderPage();
+}
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <AuthProvider>
+      <AppContent />
+      <Toaster position="top-right" richColors />
+    </AuthProvider>
   );
 }
 
