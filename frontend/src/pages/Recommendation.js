@@ -97,7 +97,7 @@ export const Recommendation = ({ onNavigate }) => {
                   <button
                     key={cat}
                     type="button"
-                    data-testid={`category-₹{cat.toLowerCase()}-btn`}
+                    data-testid={`category-${cat.toLowerCase()}-btn`}
                     onClick={() => setCategory(cat)}
                     className={`p-3 rounded-xl font-dmsans text-sm transition-all duration-300 ₹{
                       category === cat
