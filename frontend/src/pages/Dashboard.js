@@ -118,16 +118,16 @@ export const Dashboard = ({ onNavigate }) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6"
+            className="md:col-span-8 backdrop-blur-xl theme-card border rounded-2xl p-6"
           >
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-outfit font-semibold text-lg">Quick Actions</h3>
+              <h3 className="font-outfit font-semibold text-lg theme-text">Quick Actions</h3>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               <Button
                 data-testid="nav-add-card-btn"
                 onClick={() => onNavigate('add-card')}
-                className="bg-white/10 hover:bg-white/20 text-white rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300"
+                className="theme-card hover:bg-opacity-80 theme-text rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300 border"
               >
                 <Plus className="w-5 h-5" />
                 <span className="font-dmsans text-sm">Add Card</span>
@@ -135,7 +135,7 @@ export const Dashboard = ({ onNavigate }) => {
               <Button
                 data-testid="nav-recommendation-btn"
                 onClick={() => onNavigate('recommendation')}
-                className="bg-white/10 hover:bg-white/20 text-white rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300"
+                className="theme-card hover:bg-opacity-80 theme-text rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300 border"
               >
                 <Sparkles className="w-5 h-5" />
                 <span className="font-dmsans text-sm">Get Advice</span>
@@ -143,7 +143,7 @@ export const Dashboard = ({ onNavigate }) => {
               <Button
                 data-testid="nav-analytics-btn"
                 onClick={() => onNavigate('analytics')}
-                className="bg-white/10 hover:bg-white/20 text-white rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300"
+                className="theme-card hover:bg-opacity-80 theme-text rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300 border"
               >
                 <TrendingUp className="w-5 h-5" />
                 <span className="font-dmsans text-sm">Analytics</span>
@@ -151,7 +151,7 @@ export const Dashboard = ({ onNavigate }) => {
               <Button
                 data-testid="nav-rewards-btn"
                 onClick={() => onNavigate('rewards')}
-                className="bg-white/10 hover:bg-white/20 text-white rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300"
+                className="theme-card hover:bg-opacity-80 theme-text rounded-xl h-20 flex flex-col items-center justify-center gap-2 transition-all duration-300 border"
               >
                 <AlertCircle className="w-5 h-5" />
                 <span className="font-dmsans text-sm">Rewards</span>
