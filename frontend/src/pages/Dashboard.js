@@ -188,6 +188,30 @@ export const Dashboard = ({ onNavigate }) => {
                 <span className="font-dmsans text-sm font-semibold">🔥 Optimizer</span>
               </Button>
             </div>
+            
+            <div className="mt-4 grid grid-cols-2 lg:grid-cols-3 gap-3">
+              <Button
+                data-testid="nav-card-recs-btn"
+                onClick={() => onNavigate('card-recommendations')}
+                className="bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20 hover:from-[#6366f1]/30 hover:to-[#a855f7]/30 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-[#6366f1]/30 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm font-semibold">🎁 Get New Cards</span>
+              </Button>
+              <Button
+                data-testid="nav-gst-btn"
+                onClick={() => onNavigate('gst-tracker')}
+                className="bg-white/5 hover:bg-white/10 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-white/10 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm">GST Tracker</span>
+              </Button>
+              <Button
+                data-testid="nav-lounge-btn"
+                onClick={() => onNavigate('lounge-access')}
+                className="bg-white/5 hover:bg-white/10 text-white rounded-xl h-16 flex items-center justify-center gap-2 border border-white/10 transition-all duration-300"
+              >
+                <span className="font-dmsans text-sm">✈️ Lounge Access</span>
+              </Button>
+            </div>
           </motion.div>
         </div>
 
