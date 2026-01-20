@@ -33,6 +33,39 @@ async def get_expiry_alerts(current_user: dict = Depends(get_current_user)):
     
     return {"alerts": alerts}
 
+@router.get("/all-expiry-dates")
+async def get_all_expiry_dates(current_user: dict = Depends(get_current_user)):
+    cards = await db.credit_cards.find({user_id": current_user['id']}, {"_id": 0}).to_list(100)
+    
+    expiry_info = []
+    for card in cards:
+        if card.get('expiry_date'):
+            from datetime import datetime
+            try:
+                expiry = datetime.fromisoformat(card['expiry_date'].replace('Z', '+00:00'))
+                now = datetime.now()
+                days_until_expiry = (expiry - now).days
+                
+                risk = "low"
+                if days_until_expiry < 30:
+                    risk = "high"
+                elif days_until_expiry < 90:
+                    risk = "medium"
+                
+                expiry_info.append({
+                    "card_id": card['id'],
+                    "card_name": f"{card['bank_name']} {card['card_name']}",
+                    "points_balance": card.get('points_balance', 0),
+                    "expiry_date": card['expiry_date'],
+                    "days_until_expiry": days_until_expiry,
+                    "risk_level": risk
+                })
+            except:
+                pass
+    
+    expiry_info.sort(key=lambda x: x['days_until_expiry'])
+    return {"expiry_dates": expiry_info}
+
 @router.get("/redemption-suggestions")
 async def get_redemption_suggestions(current_user: dict = Depends(get_current_user)):
     cards = await db.credit_cards.find({"user_id": current_user['id']}, {"_id": 0}).to_list(100)
