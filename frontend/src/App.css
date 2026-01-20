@@ -56,31 +56,83 @@ code, pre {
 
 /* Theme-aware text colors */
 .dark .theme-text {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .light .theme-text {
-  color: #1a1a1a;
+  color: #1a1a1a !important;
 }
 
 .dark .theme-text-muted {
-  color: #9ca3af;
+  color: #9ca3af !important;
 }
 
 .light .theme-text-muted {
-  color: #6b7280;
+  color: #6b7280 !important;
+}
+
+/* Theme-aware button text */
+.light button {
+  color: #1a1a1a !important;
+}
+
+.dark button {
+  color: #ffffff !important;
 }
 
 /* Theme-aware cards */
 .dark .theme-card {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .light .theme-card {
-  background: rgba(255, 255, 255, 0.8);
-  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(99, 102, 241, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  color: #1a1a1a;
+}
+
+/* Theme-aware card hover */
+.light .theme-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 12px rgba(99, 102, 241, 0.1);
+}
+
+/* Light mode specific overrides */
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  color: #1a1a1a !important;
+}
+
+.light p, .light span, .light div {
+  color: #1a1a1a;
+}
+
+.light .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+.light .text-white {
+  color: #1a1a1a !important;
+}
+
+/* Keep accent colors visible in both modes */
+.text-\[\#6366f1\], .text-\[\#a855f7\], .text-\[\#10b981\], .text-\[\#f59e0b\], .text-\[\#ef4444\] {
+  /* These should keep their colors in both modes */
+}
+
+/* Light mode button backgrounds */
+.light button.bg-white\/5,
+.light button.bg-white\/10 {
+  background: rgba(99, 102, 241, 0.1) !important;
+  color: #1a1a1a !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.light button.bg-white\/5:hover,
+.light button.bg-white\/10:hover {
+  background: rgba(99, 102, 241, 0.2) !important;
 }
 
 /* Theme-aware gradients */
