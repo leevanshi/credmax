@@ -70,6 +70,11 @@ export const rewardsService = {
     return response.data;
   },
   
+  getRedemptionSuggestions: async () => {
+    const response = await axios.get(`${API}/rewards/redemption-suggestions`, { headers: getHeaders() });
+    return response.data;
+  },
+  
   getAllExpiryDates: async () => {
     const response = await axios.get(`${API}/rewards/all-expiry-dates`, { headers: getHeaders() });
     return response.data;
