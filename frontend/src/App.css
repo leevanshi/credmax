@@ -8,8 +8,17 @@ body {
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
   background: #050505;
   color: #ffffff;
+}
+
+.light body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #1a1a1a;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,21 +41,85 @@ code, pre {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Theme-aware backgrounds */
+.theme-bg {
+  transition: background 0.3s ease;
+}
+
+.dark .theme-bg {
+  background: linear-gradient(to bottom right, #050505, #0A0A0A, #050505);
+}
+
+.light .theme-bg {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Theme-aware text colors */
+.dark .theme-text {
+  color: #ffffff;
+}
+
+.light .theme-text {
+  color: #1a1a1a;
+}
+
+.dark .theme-text-muted {
+  color: #9ca3af;
+}
+
+.light .theme-text-muted {
+  color: #6b7280;
+}
+
+/* Theme-aware cards */
+.dark .theme-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.light .theme-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Theme-aware gradients */
+.dark .theme-gradient-bg {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.light .theme-gradient-bg {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: #0A0A0A;
 }
 
-::-webkit-scrollbar-thumb {
+.light ::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+.dark ::-webkit-scrollbar-thumb {
   background: #27272a;
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.light ::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
 }
 
 button {
