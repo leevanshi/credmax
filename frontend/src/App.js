@@ -12,6 +12,9 @@ import { Transactions } from './pages/Transactions';
 import { CardComparison } from './pages/CardComparison';
 import { Trends } from './pages/Trends';
 import { Optimizer } from './pages/Optimizer';
+import { CardRecommendations } from './pages/CardRecommendations';
+import { GSTTracker } from './pages/GSTTracker';
+import { LoungeAccess } from './pages/LoungeAccess';
 import { Toaster } from './components/ui/sonner';
 import './App.css';
 
