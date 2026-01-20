@@ -66,6 +66,16 @@ export const Dashboard = ({ onNavigate }) => {
         <div className="flex items-center gap-4">
           <span className="font-dmsans text-gray-400 text-sm">Hi, {user?.name}</span>
           <Button
+            data-testid="theme-toggle-btn"
+            onClick={toggleTheme}
+            variant="ghost"
+            size="sm"
+            className="text-gray-400 hover:text-white rounded-full"
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          >
+            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </Button>
+          <Button
             data-testid="logout-btn"
             onClick={logout}
             variant="ghost"
