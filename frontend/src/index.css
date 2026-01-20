@@ -57,6 +57,11 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+  }
 }
 
 @layer base {
@@ -65,5 +70,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  .light body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #1a1a1a;
+  }
+  
+  .dark body {
+    background: #050505;
+    color: #ffffff;
   }
 }
