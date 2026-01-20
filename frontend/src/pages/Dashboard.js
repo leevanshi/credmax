@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CreditCard, Plus, TrendingUp, AlertCircle, Sparkles, LogOut } from 'lucide-react';
+import { CreditCard, Plus, TrendingUp, AlertCircle, Sparkles, LogOut, Moon, Sun } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { cardService, rewardsService, analyticsService } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import { toast } from 'sonner';
 
 export const Dashboard = ({ onNavigate }) => {
