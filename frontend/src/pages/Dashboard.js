@@ -55,22 +55,22 @@ export const Dashboard = ({ onNavigate }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#050505] via-[#0A0A0A] to-[#050505] text-white">
+    <div className="min-h-screen theme-bg theme-text">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#6366f1] rounded-full filter blur-[128px] opacity-10"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#a855f7] rounded-full filter blur-[128px] opacity-10"></div>
       </div>
 
-      <nav className="relative z-10 px-6 py-6 max-w-7xl mx-auto flex justify-between items-center border-b border-white/10">
+      <nav className="relative z-10 px-6 py-6 max-w-7xl mx-auto flex justify-between items-center border-b border-white/10 dark:border-white/10 light:border-black/10">
         <div className="text-2xl font-bold font-outfit">CredMax</div>
         <div className="flex items-center gap-4">
-          <span className="font-dmsans text-gray-400 text-sm">Hi, {user?.name}</span>
+          <span className="font-dmsans theme-text-muted text-sm">Hi, {user?.name}</span>
           <Button
             data-testid="theme-toggle-btn"
             onClick={toggleTheme}
             variant="ghost"
             size="sm"
-            className="text-gray-400 hover:text-white rounded-full"
+            className="theme-text-muted hover:text-white rounded-full"
             title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           >
             {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -80,7 +80,7 @@ export const Dashboard = ({ onNavigate }) => {
             onClick={logout}
             variant="ghost"
             size="sm"
-            className="text-gray-400 hover:text-white rounded-full"
+            className="theme-text-muted hover:text-white rounded-full"
           >
             <LogOut className="w-4 h-4" />
           </Button>
