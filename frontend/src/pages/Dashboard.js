@@ -13,6 +13,7 @@ export const Dashboard = ({ onNavigate }) => {
   const [insights, setInsights] = useState('');
   const [loading, setLoading] = useState(true);
   const { user, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     loadDashboardData();
