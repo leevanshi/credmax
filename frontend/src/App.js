@@ -59,6 +59,12 @@ function AppContent() {
         return <Trends onNavigate={setCurrentPage} />;
       case 'optimizer':
         return <Optimizer onNavigate={setCurrentPage} />;
+      case 'card-recommendations':
+        return <CardRecommendations onNavigate={setCurrentPage} />;
+      case 'gst-tracker':
+        return <GSTTracker onNavigate={setCurrentPage} />;
+      case 'lounge-access':
+        return <LoungeAccess onNavigate={setCurrentPage} />;
       default:
         return <Dashboard onNavigate={setCurrentPage} />;
     }
