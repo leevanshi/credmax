@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 export const Rewards = ({ onNavigate }) => {
   const [alerts, setAlerts] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+  const [allExpiryDates, setAllExpiryDates] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,12 +17,14 @@ export const Rewards = ({ onNavigate }) => {
 
   const loadRewards = async () => {
     try {
-      const [alertsData, suggestionsData] = await Promise.all([
+      const [alertsData, suggestionsData, expiryData] = await Promise.all([
         rewardsService.getExpiryAlerts(),
-        rewardsService.getRedemptionSuggestions()
+        rewardsService.getRedemptionSuggestions(),
+        rewardsService.getAllExpiryDates()
       ]);
       setAlerts(alertsData.alerts);
       setSuggestions(suggestionsData.suggestions);
+      setAllExpiryDates(expiryData.expiry_dates);
     } catch (error) {
       toast.error('Failed to load rewards data');
     } finally {
