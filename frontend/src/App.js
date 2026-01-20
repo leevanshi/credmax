@@ -66,10 +66,12 @@ function AppContent() {
 
 function App() {
   return (
-    <AuthProvider>
-      <AppContent />
-      <Toaster position="top-right" richColors />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <AppContent />
+        <Toaster position="top-right" richColors />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
