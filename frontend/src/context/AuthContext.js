@@ -10,6 +10,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem('credmax_token'));
+  const [biometricEnabled, setBiometricEnabled] = useState(
+    localStorage.getItem('credmax_biometric') === 'true'
+  );
 
   useEffect(() => {
     if (token) {
@@ -57,8 +60,73 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const enableBiometric = async () => {
+    if (!window.PublicKeyCredential) {
+      throw new Error('Biometric authentication not supported');
+    }
+
+    try {
+      // Check if biometric is available
+      const available = await window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+      
+      if (available) {
+        localStorage.setItem('credmax_biometric', 'true');
+        localStorage.setItem('credmax_biometric_email', user.email);
+        setBiometricEnabled(true);
+        return true;
+      } else {
+        throw new Error('Biometric authentication not available on this device');
+      }
+    } catch (error) {
+      console.error('Biometric setup error:', error);
+      throw error;
+    }
+  };
+
+  const disableBiometric = () => {
+    localStorage.removeItem('credmax_biometric');
+    localStorage.removeItem('credmax_biometric_email');
+    setBiometricEnabled(false);
+  };
+
+  const loginWithBiometric = async () => {
+    if (!biometricEnabled) {
+      throw new Error('Biometric not enabled');
+    }
+
+    const savedEmail = localStorage.getItem('credmax_biometric_email');
+    if (!savedEmail) {
+      throw new Error('No saved credentials');
+    }
+
+    // In production, this would use WebAuthn API
+    // For now, we'll simulate biometric verification
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const savedToken = localStorage.getItem('credmax_token');
+        if (savedToken) {
+          setToken(savedToken);
+          resolve(true);
+        } else {
+          reject(new Error('Biometric verification failed'));
+        }
+      }, 500);
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, signup, logout, token }}>
+    <AuthContext.Provider value={{ 
+      user, 
+      loading, 
+      login, 
+      signup, 
+      logout, 
+      token,
+      biometricEnabled,
+      enableBiometric,
+      disableBiometric,
+      loginWithBiometric
+    }}>
       {children}
     </AuthContext.Provider>
   );
